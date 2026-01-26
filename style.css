@@ -1,74 +1,100 @@
-* {
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #74ebd5, #9face6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   margin: 0;
-  padding: 0;
 }
 
-body {
-  background-color: #548687;
+main {
   text-align: center;
+  background: #fff;
+  padding: 30px;              /* slightly more padding */
+  border-radius: 20px;        /* smoother corners */
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+  width: 500px;               /* broader main box */
+  max-width: 90%;             /* responsive cap */
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  font-weight: bold;
 }
 
 .container {
-  height: 70vh;
   display: flex;
-
   justify-content: center;
-  align-items: center;
 }
 
 .game {
-  height: 60vmin;
-  width: 60vmin;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 120px); /* broader grid */
+  grid-gap: 15px;                          /* more spacing */
   justify-content: center;
-  align-items: center;
-  gap: 1.5vmin;
 }
 
 .box {
-  height: 18vmin;
-  width: 18vmin;
-  border-radius: 1rem;
+  width: 120px;
+  height: 120px;
+  font-size: 2.2rem;         /* slightly larger text */
+  font-weight: bold;
   border: none;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
-  font-size: 8vmin;
-  color: #b0413e;
-  background-color: #ffffc7;
+  border-radius: 12px;
+  background: #f0f0f0;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
 }
 
-#reset-btn {
-  padding: 1rem;
-  font-size: 1.25rem;
-  background-color: #191913;
-  color: #fff;
-  border-radius: 1rem;
-  border: none;
+.box:hover {
+  background: #d6e4ff;
+  transform: scale(1.1);
 }
 
+#reset-btn,
 #new-btn {
-  padding: 1rem;
-  font-size: 1.25rem;
-  background-color: #191913;
-  color: #fff;
-  border-radius: 1rem;
+  margin-top: 20px;
+  padding: 12px 24px;
   border: none;
+  border-radius: 10px;
+  background: #4a90e2;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
-#msg {
-  color: #ffffc7;
-  font-size: 5vmin;
+#reset-btn:hover,
+#new-btn:hover {
+  background: #357ab8;
 }
 
 .msg-container {
-  height: 100vmin;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 4rem;
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  text-align: center;
 }
 
 .hide {
   display: none;
+}
+
+#msg {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+  color: #333;
 }
